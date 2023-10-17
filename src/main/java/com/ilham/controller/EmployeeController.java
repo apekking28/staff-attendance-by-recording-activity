@@ -1,8 +1,7 @@
 package com.ilham.controller;
 
-import com.ilham.dto.EmployeeRequest;
-import com.ilham.dto.EmployeeResponse;
-import com.ilham.entity.Employee;
+import com.ilham.dto.EmployeeRequestDTO;
+import com.ilham.dto.EmployeeResponseDTO;
 import com.ilham.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,22 +18,22 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public EmployeeResponse createEmployee(@RequestBody EmployeeRequest request) {
+    public EmployeeResponseDTO createEmployee(@RequestBody EmployeeRequestDTO request) {
         return employeeService.createEmployee(request);
     }
 
     @GetMapping
-    public List<EmployeeResponse> getAllEmployee() {
+    public List<EmployeeResponseDTO> getAllEmployee() {
         return employeeService.getListEmployee();
     }
 
     @GetMapping("/{id}")
-    public EmployeeResponse detailEmployee(@PathVariable("id") Long id) {
+    public EmployeeResponseDTO detailEmployee(@PathVariable("id") Long id) {
         return employeeService.getEmployeeById(id);
     }
 
     @PutMapping("/{id}")
-    public EmployeeResponse updateEmployee(@PathVariable("id") Long id, @RequestBody EmployeeRequest request) {
+    public EmployeeResponseDTO updateEmployee(@PathVariable("id") Long id, @RequestBody EmployeeRequestDTO request) {
         return employeeService.updateEmployeeById(id, request);
     }
 

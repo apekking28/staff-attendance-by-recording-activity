@@ -1,18 +1,18 @@
 package com.ilham.service;
 
-import com.ilham.dto.EmployeeRequest;
-import com.ilham.dto.EmployeeResponse;
+import com.ilham.dto.EmployeeRequestDTO;
+import com.ilham.dto.EmployeeResponseDTO;
 
 import java.util.List;
 
 public interface EmployeeService {
-    public EmployeeResponse createEmployee(EmployeeRequest request);
+    public EmployeeResponseDTO createEmployee(EmployeeRequestDTO request);
 
-    public EmployeeResponse updateEmployeeById(Long employeeId, EmployeeRequest request);
+    public EmployeeResponseDTO updateEmployeeById(Long employeeId, EmployeeRequestDTO request);
 
-    public EmployeeResponse getEmployeeById(Long employeeId);
+    public EmployeeResponseDTO getEmployeeById(Long employeeId);
 
-    public List<EmployeeResponse> getListEmployee();
+    public List<EmployeeResponseDTO> getListEmployee();
 
     public String deleteEmployeeById(Long employeeId);
 }

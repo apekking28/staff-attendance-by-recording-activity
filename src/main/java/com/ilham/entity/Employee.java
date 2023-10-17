@@ -4,9 +4,11 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -27,6 +29,10 @@ public class Employee {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     private Date updatedAt;
+//
+//    @OneToMany(mappedBy = "employee")
+//    private List<Attendance> attendances;
+
 }
 
 

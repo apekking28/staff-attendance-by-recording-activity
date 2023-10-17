@@ -11,17 +11,19 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class EmployeeResponse {
+public class EmployeeResponseDTO {
     private Long id;
     private String name;
     private String username;
     private String email;
     private String address;
     private String position;
+    private String createdAt;
+    private String updatedAt;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt; // Field to track the creation date and time
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt; // to track the last update date and time
+//    @Temporal(TemporalType.TIMESTAMP)
+//    private Date createdAt; // Field to track the creation date and time
+//
+//    @Temporal(TemporalType.TIMESTAMP)
+//    private Date updatedAt; // to track the last update date and time
 }

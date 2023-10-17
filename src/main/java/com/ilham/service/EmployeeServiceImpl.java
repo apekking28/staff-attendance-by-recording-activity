@@ -1,7 +1,7 @@
 package com.ilham.service;
 
-import com.ilham.dto.EmployeeRequest;
-import com.ilham.dto.EmployeeResponse;
+import com.ilham.dto.EmployeeRequestDTO;
+import com.ilham.dto.EmployeeResponseDTO;
 import com.ilham.entity.Employee;
 import com.ilham.repository.EmployeeRepository;
 import com.ilham.util.Mapper;
@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public EmployeeResponse createEmployee(EmployeeRequest request) {
+    public EmployeeResponseDTO createEmployee(EmployeeRequestDTO request) {
         Date currentdate = new Date();
         Employee savedEmployee = Employee
                 .builder()
@@ -37,10 +37,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeResponse updateEmployeeById(Long employeeId, EmployeeRequest request) {
-        EmployeeResponse employee = getEmployeeById(employeeId);
+    public EmployeeResponseDTO updateEmployeeById(Long employeeId, EmployeeRequestDTO request) {
+        Employee employee = employeeRepository.findById(employeeId)
+                .orElseThrow(() -> new IllegalArgumentException("Employee with id : " + employeeId + " not found"));
 
-        Date currentdate = new Date();
+
+        Date currentDate = new Date();
         Employee updateEmployee = Employee
                 .builder()
                 .id(employeeId)
@@ -50,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .address(request.getEmail())
                 .position(request.getPosition())
                 .createdAt(employee.getCreatedAt())
-                .updatedAt(currentdate)
+                .updatedAt(currentDate)
                 .build();
 
         employeeRepository.save(updateEmployee);
@@ -59,14 +61,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeResponse getEmployeeById(Long employeeId) {
+    public EmployeeResponseDTO getEmployeeById(Long employeeId) {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new IllegalArgumentException("Employee with id : " + employeeId + " not found"));
         return Mapper.employeeRequestToEmployee(employee);
     }
 
     @Override
-    public List<EmployeeResponse> getListEmployee() {
+    public List<EmployeeResponseDTO> getListEmployee() {
         return employeeRepository.findAll()
                 .stream()
                 .map(Mapper::employeeRequestToEmployee)
