@@ -1,7 +1,7 @@
 package com.ilham.controller;
 
-import com.ilham.dto.EmployeeRequestDTO;
-import com.ilham.dto.EmployeeResponseDTO;
+import com.ilham.dto.request.EmployeeRequestDTO;
+import com.ilham.dto.response.EmployeeResponseDTO;
 import com.ilham.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 

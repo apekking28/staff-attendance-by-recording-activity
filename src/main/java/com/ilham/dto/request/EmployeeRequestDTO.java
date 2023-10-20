@@ -1,4 +1,4 @@
-package com.ilham.dto;
+package com.ilham.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;

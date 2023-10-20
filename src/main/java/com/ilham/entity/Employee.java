@@ -29,9 +29,10 @@ public class Employee {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     private Date updatedAt;
-//
-//    @OneToMany(mappedBy = "employee")
-//    private List<Attendance> attendances;
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Attendance> attendances;
+
 
 }
 

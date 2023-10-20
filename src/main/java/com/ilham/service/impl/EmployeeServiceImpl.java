@@ -1,9 +1,10 @@
-package com.ilham.service;
+package com.ilham.service.impl;
 
-import com.ilham.dto.EmployeeRequestDTO;
-import com.ilham.dto.EmployeeResponseDTO;
+import com.ilham.dto.request.EmployeeRequestDTO;
+import com.ilham.dto.response.EmployeeResponseDTO;
 import com.ilham.entity.Employee;
 import com.ilham.repository.EmployeeRepository;
+import com.ilham.service.EmployeeService;
 import com.ilham.util.Mapper;
 import org.springframework.stereotype.Service;
 
@@ -43,6 +44,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
         Date currentDate = new Date();
+
         Employee updateEmployee = Employee
                 .builder()
                 .id(employeeId)

@@ -1,4 +1,4 @@
-package com.ilham.dto;
+package com.ilham.dto.response;
 
 import lombok.*;
 
@@ -20,10 +20,4 @@ public class EmployeeResponseDTO {
     private String position;
     private String createdAt;
     private String updatedAt;
-
-//    @Temporal(TemporalType.TIMESTAMP)
-//    private Date createdAt; // Field to track the creation date and time
-//
-//    @Temporal(TemporalType.TIMESTAMP)
-//    private Date updatedAt; // to track the last update date and time
 }
