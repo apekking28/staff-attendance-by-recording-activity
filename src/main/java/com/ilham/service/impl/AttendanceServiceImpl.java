@@ -1,13 +1,11 @@
 package com.ilham.service.impl;
 
-import com.ilham.dto.request.AttendanceRequestDTO;
 import com.ilham.dto.response.AttendanceResponseDTO;
 import com.ilham.dto.response.EmployeeResponseDTO;
 import com.ilham.entity.Attendance;
 import com.ilham.entity.Employee;
 import com.ilham.exception.NotFoundException;
 import com.ilham.repository.AttendanceRepository;
-import com.ilham.repository.EmployeeRepository;
 import com.ilham.service.AttendanceService;
 import com.ilham.service.EmployeeService;
 import com.ilham.util.Mapper;
