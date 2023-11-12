@@ -28,8 +28,7 @@ public class Mapper {
         String checkInDate = convertDateToString(attendance.getCheckIn());
         String checkInHour = convertDateToHour(attendance.getCheckIn());
 
-        // convert checkOut to date & hour
-        String checkOutDate = convertDateToString(attendance.getCheckOut());
+        // convert checkOut to hour
         String checkOutHour = convertDateToHour(attendance.getCheckOut());
 
 
@@ -38,7 +37,6 @@ public class Mapper {
                 .status(attendance.getStatus())
                 .checkInDate(checkInDate)
                 .checkInHour(checkInHour)
-                .checkOutDate(checkOutDate)
                 .checkOutHour(checkOutHour)
                 .employee(attendance.getEmployee())
                 .build();

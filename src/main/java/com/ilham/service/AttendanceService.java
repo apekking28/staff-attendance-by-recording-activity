@@ -8,4 +8,6 @@ import org.springframework.stereotype.Service;
 public interface AttendanceService {
      AttendanceResponseDTO checkIn(Long employeeId);
      AttendanceResponseDTO checkOut(Long employeeId ,Long AttendanceId);
+
+     
 }

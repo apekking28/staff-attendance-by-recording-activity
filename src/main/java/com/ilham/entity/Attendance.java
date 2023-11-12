@@ -15,6 +15,7 @@ public class Attendance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String status;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -26,6 +27,6 @@ public class Attendance {
     private Date checkOut;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id")
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee employee;
 }

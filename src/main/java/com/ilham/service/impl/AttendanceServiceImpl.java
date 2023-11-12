@@ -81,5 +81,4 @@ public class AttendanceServiceImpl implements AttendanceService {
         return Mapper.attendanceToAttendanceResponse(checkOut);
     }
 
-
 }

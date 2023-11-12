@@ -13,7 +13,6 @@ public class AttendanceResponseDTO {
     private String status;
     private String checkInDate;
     private String checkInHour;
-    private String checkOutDate;
     private String checkOutHour;
     private Employee employee;
 }
