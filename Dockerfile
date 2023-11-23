@@ -15,6 +15,6 @@ WORKDIR /opt/app/
 
 COPY --from=maven /usr/src/app/target/${JAR_FILE} /opt/app
 
-EXPOSE 8082
+EXPOSE 8181
 
 ENTRYPOINT ["java", "-jar", "attendace-staff-0.0.1-SNAPSHOT.jar"]
