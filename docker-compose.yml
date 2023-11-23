@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  attendance-staff:
+    image: 'attendance-staff:latest'
+    container_name: attendance-staff
+    build:
+      dockerfile: Dockerfile
+    depends_on:
+      - attendance-staff-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://attendance-staff-db:5432/attendance_staff_db
+      - SPRING_DATASOURCE_USERNAME=attendance_staff_db
+      - SPRING_DATASOURCE_PASSWORD=attendance_staff_db
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SERVER_PORT=8082
+    expose:
+      - "8082"
+    ports:
+      - "8082:8082"
+
+  attendance-staff-db:
+    image: 'postgres:15-alpine'
+    container_name: attendance-staff-db
+    environment:
+      - POSTGRES_USER=attendance_staff_db
+      - POSTGRES_PASSWORD=attendance_staff_db
+      - POSTGRES_DB=attendance_staff_db
+    volumes:
+      - attendance_staff_db:/var/lib/postgresql/data
+    ports:
+      - "5441:5432"
+
+volumes:
+  attendance_staff_db:
