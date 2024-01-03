@@ -42,7 +42,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new IllegalArgumentException("Employee with id : " + employeeId + " not found"));
 
-
         Date currentDate = new Date();
 
         Employee updateEmployee = Employee
